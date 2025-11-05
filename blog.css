@@ -1,0 +1,658 @@
+/* =========================================================
+   ✅ GLOBAL RESET & BASE STYLES
+========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #ccc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================================
+   ✅ NAVBAR
+========================================================= */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 10px 20px;
+  max-width: 90%;
+  margin: 20px auto;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.contact-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background: #fff;
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* =========================================================
+   ✅ HERO SECTION
+========================================================= */
+.hero-section {
+  padding-top: 180px;
+  padding-bottom: 100px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.hero-title {
+  font-size: 4.2rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+
+/* =========================================================
+   ✅ MAIN LAYOUT GRID
+========================================================= */
+.contain {
+  display: grid;
+  grid-template-columns: 43% 57%;
+  gap: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 0;
+  background-color: #1D1D1D;
+  transition: all 0.3s ease;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-title {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #fff;
+  line-height: 1.1;
+  max-width: 460px;
+}
+
+.image-placeholder {
+  width: 100%;
+  padding-bottom: 78%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #333;
+}
+
+.house-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+/* =========================================================
+   ✅ RIGHT COLUMN - STATS & DESCRIPTION
+========================================================= */
+.right-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-section {
+  margin-bottom: 50px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 18px 0;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-right: 25px;
+  line-height: 1;
+  min-width: 50px;
+  transition: all 0.3s ease;
+}
+
+.stat-content {
+  flex-grow: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #A0A0A0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.stat-divider {
+  border: 0;
+  height: 1px;
+  background: #333;
+  margin: 0;
+}
+
+.description-section p {
+  font-size: 1rem;
+  color: #A0A0A0;
+  margin-bottom: 22px;
+  max-width: 550px;
+  transition: all 0.3s ease;
+}
+
+/* =========================================================
+   ✅ TESTIMONIAL SECTION
+========================================================= */
+:root {
+    --primary-green: #00b67a;
+    --text-color: #333;
+}
+
+.testimonial-section {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    background-image: url('/Clay image/side red.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 20px 80px;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    transition: all 0.3s ease;
+}
+
+.review-info {
+    display: flex;
+    gap: 30px;
+    flex-grow: 1;
+}
+
+.trustpilot-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+
+.stars {
+    color: var(--primary-green);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    max-width: 450px;
+}
+
+.quote {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.author {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.view-reviews {
+    align-self: flex-end;
+    padding-bottom: 5px;
+}
+
+.view-reviews-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.view-reviews-link:hover {
+    color: var(--primary-green);
+}
+
+.arrow {
+    margin-left: 5px;
+    font-size: 1.2rem;
+}
+
+/* =========================================================
+   ✅ HOME HERO SECTION
+========================================================= */
+.home-hero-section {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 60px 20px;
+}
+
+.layout-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+@media (min-width: 992px) {
+    .layout-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 30px;
+    }
+}
+
+.image-area img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.description-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    opacity: 0.85;
+}
+
+.cta-box {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 30px;
+    margin-top: 30px;
+    align-self: flex-start;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+
+.cta-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.cta-link {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.cta-link:hover {
+    text-decoration: underline;
+}
+
+.cta-link span {
+    margin-left: 8px;
+    font-size: 1.5rem;
+}
+
+/* =========================================================
+   ✅ HOME LOAN HERO
+========================================================= */
+.home-loan-hero {
+    background-image: url('/Clay image/cta.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: white;
+    color: black;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #817b7b;
+}
+
+/* =========================================================
+   ✅ FOOTER
+========================================================= */
+.site-footer {
+  background-color: #111;
+  color: #fff;
+  padding-top: 50px;
+  transition: all 0.3s ease;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  padding-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-logo-text {
+  flex: 1;
+  max-width: 250px;
+}
+
+.footer-logo-text h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-logo-text p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.footer-links-group {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  flex: 2;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column li {
+  margin-bottom: 10px;
+}
+
+.footer-column a, .schedule-column p {
+  color: #ccc;
+  font-size: 14px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #fff;
+}
+
+.schedule-column p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* =========================================================
+   ✅ MEDIA QUERIES
+========================================================= */
+@media (max-width: 1200px) {
+  .contain {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .cta-box {
+    position: static;
+    margin-top: 30px;
+  }
+
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-section {
+    height: auto;
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .hero-content h2 {
+    font-size: 2.5em;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-title {
+    font-size: 1.5rem;
+  }
+
+  .cta-link {
+    font-size: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8em;
+  }
+
+  .hero-content h2 {
+    font-size: 2em;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
